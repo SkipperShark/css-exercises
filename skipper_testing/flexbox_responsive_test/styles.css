@@ -1,0 +1,177 @@
+html {
+    /* color: blue; */
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+
+body {
+    background: hsl(210deg, 30%, 12%);
+    color: hsl(0deg 0% 100%);
+}
+
+/* * Container Width demo */
+
+.form {
+    border: white 1px solid;
+    padding: 1rem;
+
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+input {
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.formInput {
+    display: block;
+    width: 100%;
+    color: lightblue;
+    min-width: 0px;
+}
+
+.name {
+    flex: 1 1 160px;
+}
+
+.email {
+    flex: 3 1 180px;
+}
+
+.submit {
+    flex: 1 1 80px
+}
+
+
+/* * Flex Container Switching  */
+
+.displayModeContainer {
+    border: 1px white solid;
+    padding: 0.5rem;
+    height: 150px;
+    transition: display 1s;
+    display: flex;
+    justify-content: space-around;
+    gap: 150px
+}
+
+.displayModeContainer>div {
+    border: 1px white solid;
+    margin: 0.3rem;
+    /* flex-grow: 1; */
+}
+
+#widthTest {
+    width: 150px;
+}
+
+
+/* * Flex-shrink example  */
+
+.wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.item {
+    height: 32px;
+    border: 2px solid hsl(210deg 8% 50%);
+    background: hsl(210deg 15% 20%);
+}
+
+.item.stretch {
+    /*
+    Because this item is empty, it
+    has a default hypothetical width
+    of 0px. This isn't realistic,
+    though; in a typical case,
+    there would be content in here!
+    And so we set a width of 300px
+    to simulate it containing stuff.
+    */
+    width: 300px;
+    flex-grow: 1;
+    border-radius: 16px;
+}
+
+.item.ball {
+    width: 32px;
+    /*
+    NOTE: We could prevent the circle
+    from squishing into an oval by
+    setting border-radius: 16px
+    instead. I'm using percentages
+    because it makes for a better
+    demo. But even with a pixel-based
+    radius, we still need
+    flex-shrink: 0 to prevent the
+    item from shrinking (give it a
+    shot and see the difference!).
+    */
+    border-radius: 50%;
+}
+
+.margin {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid white;
+    height: 200px;
+    gap: 10px;
+}
+
+.margin div {
+    width: 100px;
+    background-color: grey;
+    border: 1px solid blue
+}
+
+.one {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/** Header Layout example  */
+
+.header {
+    width: 50%;
+    list-style: none;
+    border-bottom: 1px dotted white;
+    display: flex;
+    flex-direction: flex-end;
+    gap: 8px;
+    padding: 12px;
+}
+
+ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.875 rem;
+}
+
+.logo {
+    margin-right: auto;
+    font-weight: bold;
+    font-size: 1.125rem
+}
+
+.image {
+    /* max-width: 100px; */
+    flex: 1 1 100px;
+}
+
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.media .content {
+    flex: 2;
+    padding: 10px;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script>
+        //const formContainer = document.getElementById("form");
+        //const widthSlider = document.getElementById("widthSlider");
+        //widthSlider.addEventListener("input", updateFormWidth);
+
+        function updateFormWidth(val) {
+            console.log("test");
+            document.getElementById("form").style.width = val + "px"
+            document.getElementById("widthDisplay").innerText = val
+
+            document.getElementById("nameWidthDisplay").innerText = document.getElementById("nameContainer").offsetWidth + "px"
+            document.getElementById("emailWidthDisplay").innerText = document.getElementById("emailContainer").offsetWidth + "px"
+            document.getElementById("submitWidthDisplay").innerText = document.getElementById("submitContainer").offsetWidth + "px"
+
+            console.log(`size : ${document.getElementById("textInput").getAttribute("size")}`);
+        }
+
+        function setToBlock() {
+            document.getElementById("displayModeContainer").style = "display:block"
+        }
+
+        function setToFlex() {
+            document.getElementById("displayModeContainer").style = "display:flex"
+        }
+
+    </script>
+</head>
+
+<style>
+    /* This is the key property: */
+    .item.ball {
+        flex-shrink: 0;
+    }
+</style>
+
+<body>
+
+    <h1>Container Width:
+        <input type="range" id="widthSlider" value="600" name="width" min="100" max="850"
+            oninput="updateFormWidth(this.value)">
+        <span id="widthDisplay">600</span>
+    </h1>
+
+    <div class="form" id="form" style="width: 600px;">
+
+        <label for="textInput" class="name">
+            Name:
+            <input id="textInput" type="text" placeholder="Elena" class="formInput">
+        </label>
+
+        <label for="emailInput" class="email">
+            Name:
+            <input id="emailInput" type="text" placeholder="Elena@email.com" class="formInput">
+        </label>
+
+        <button class="submit">Submit</button>
+
+    </div>
+
+    <h1>Flex Container Switching</h1>
+
+    <div id="displayModeContainer" class="displayModeContainer">
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        </div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        </div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        </div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        </div>
+    </div>
+
+    <fieldset>
+        <input type="radio" name="displayType" id="block" oninput="setToBlock()">
+        <label for="block">block</label>
+
+        <input type="radio" name="displayType" id="flex" oninput="setToFlex()">
+        <label for="flex">flex</label>
+    </fieldset>
+
+    <div>
+        <input id="widthTest" type="text"></input>
+    </div>
+
+    <div class="wrapper">
+        <div class="item ball"></div>
+        <div class="item stretch"></div>
+        <div class="item ball"></div>
+    </div>
+
+    <h1>Auto Margin Example</h1>
+    <div class="margin">
+        <div class="one">one</div>
+        <div class="two">two</div>
+        <div class="three">three</div>
+        <div class="four">four</div>
+    </div>
+
+    <h1>Header layout example</h1>
+
+    <ul class="header">
+        <li class="logo">Corpatech</li>
+        <li><a href="">Mission</li>
+        <li><a href="">Contact</a></li>
+    </ul>
+
+    <h1>mozilla image example</h1>
+
+    <div class="media">
+        <div class="image"><img src="https://www.svgrepo.com/show/354054/mdn.svg" alt="MDN logo"></div>
+        <div class="content">This is the content of my media object. Items directly inside the flex container will be
+            aligned to flex-start.</div>
+    </div>
+
+</body>
+
+</html>
