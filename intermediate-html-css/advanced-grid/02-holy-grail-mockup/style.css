@@ -34,19 +34,18 @@ ul > li {
   grid-area: header;
 
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 4fr;
-  grid-template-areas:
+  grid-template-columns: 1fr 2fr;
+  /* grid-template-areas:
     "headerLogo headerMenu"
-  ;
+  ; */
 }
 
 .logo {
-  grid-area: headerLogo;
+  justify-self: start;
 }
 
 .menu {
-  grid-area: headerMenu;
+  align-self: center;
 
   ul, li {
     font-size: 16px;
@@ -65,11 +64,8 @@ ul > li {
   grid-area: sideBar;
 
   display: grid;
-  /* grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr)); */
   grid-template-rows: repeat(4, 1fr);
   gap: 50px;
-  align-items: center;
-  justify-items: stretch;
   
   .photo {
     background-color: white;
@@ -84,6 +80,12 @@ ul > li {
     color: black;
     font-size: 16px;
     font-weight: normal;
+
+  }
+  
+  .photo, .side-content {
+    display: grid;
+    place-content: center;
   }
 }
 
@@ -109,8 +111,7 @@ ul > li {
   display: grid;
   gap: 15px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-rows: repeat(auto-fit, 200px);
-  overflow-x: scroll;
+  overflow-y: scroll;
   
   p {
     font-size: 18px;
@@ -123,6 +124,7 @@ ul > li {
     background-color: #FFFFFF;
     color: black;
     text-align: center;
+    height: 200px;
   }
 }
 
@@ -131,6 +133,7 @@ ul > li {
     color: black;
     font-weight: normal;
     font-size: 14px;
+    padding: 5px;
   }
   
   .title {
